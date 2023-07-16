@@ -1,0 +1,40 @@
+<%if(currentUser){%>
+  <h1>Leave a Rivew</h1>
+  <form class="mb-3" action="/main/show/<%=Camp._id%>" method="POST">
+    <label for="customRange2" class="form-label ">Example range</label>
+    <input type="range" class="form-range" min="0" max="5" id="customRange2" name="rating">
+    <label for="customRange2" class="form-label ">Review</label>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="textarea" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+    <%for(let review of Camp.reviews){%>
+      <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%=review.rating%></h5>
+        <h5 class="card-title">write by <%=review.author.username%></h5>
+        <p class="card-text"><%=review.textarea%></p>
+        <% if(currentUser&&review.author.equals(currentUser._id)){%>
+        <form action="/main/show/<%=Camp._id%>/<%=review._id%>?_method=DELETE" method="POST">
+          <button class="btn btn-sm btn-danger"type="submit">delete</button>
+        </form>
+        <%}%>
+      </div>
+      </div>
+      <%}%>
+  <%}else{%>
+  <h1>Rivew</h1>
+      <%for(let review of Camp.reviews){%>
+      <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%=review.rating%></h5>
+        <h5 class="card-title">write by <%=review.author.username%></h5>
+        <p class="card-text"><%=review.textarea%></p>
+      </div>
+      </div>
+      <%}%>
+      <%}%>

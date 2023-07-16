@@ -1,0 +1,54 @@
+<% layout('./layout/boilerplate') -%>
+
+    <div class="row mb-5">
+        <h1 class="text-center">Edit Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/main/edit/<%=Camp.id%>?_method=PUT" method="POST" onsubmit="submitForm(e)">
+                <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" placeholder="<%=Camp.title%>" type="text" id="title" name="title">
+                </div>
+                <div class="mb-3">
+                <label class="form-label" for="location">location</label>
+                <input class="form-control" placeholder="<%=Camp.location%>" type="text" id="location" name="location">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">pirce</label>
+                <div class="input-group">
+                    <span class="input-group-text"  id="pirce">$</span>
+                    <input class="form-control" placeholder="<%=Camp.price%>" type="text" id="price" name="price">
+                </div>
+                </div>
+                <div class="mb-3">
+                        <label class="form-label" for="description">description</label>
+                        <div class="input-group">
+                            <span class="input-group-text">With textarea</span>
+                            <textarea class="form-control" placeholder="<%=Camp.description%>" id="description" name="description" aria-label="With textarea"></textarea>
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Photo</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="Photo">URL</span>
+                    <input class="form-control" type="text" placeholder="<%=Camp.photo%>" id="Photo" name="Photo">
+                </div>
+                </div>
+                
+                <div class="mb-3">
+                    <input class="btn btn-success" type="submit" value="Add Campground">
+                </div>
+            </form>
+            <a href="/main/show/<%=Camp.id%>">back</a>
+    </div>
+    </div>
+
+
+    
+    
+      
+      
+      
+      
+    
+    
+    

@@ -1,0 +1,43 @@
+<% layout('./layout/boilerplate') -%>
+<div class="container">
+    <h5 class="mb-4 mt-2">최고의 여행을 위한 최상의 서비스가 있는 해든 슈페리어 더블 205호</h5>  
+    <div class="row mb-5">
+        <div class="col-6  col-md-6">
+            <div class="card">
+                    <img class="img-fluid" src=<%=Camp.photo%>>
+                            <div class="card-body">
+                            <h5 class="card-title"><%=Camp.title%></h5>
+                            <p class="card-text"><%=Camp.description%></p>
+                            </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6 class="card-subtitle mb-2 text-muted">$<%=Camp.price%>/night</h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6><%=Camp.location%></h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>wrote by <%=Camp.author.username%></h6>
+                            </li>
+                        
+                            
+                        </ul>
+                        <% if(currentUser&&Camp.author.equals(currentUser._id)){%>
+                            <div class="card-body">
+                                <a class="btn btn-info" href="/main/edit/<%=Camp._id%>">edit</a>
+                                <form class="d-inline"action="/main/delete/<%=Camp.id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                
+                            </div>
+                        <%}%>
+                </div>
+                <a href="/main">back</a>
+            </div>
+        <div class="col-6">
+            <%- include('../partials/review') %>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,78 @@
+<% layout('./layout/boilerplate') -%>
+    <div class="row mb-5">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+            <form method="post" action="/main/new" novalidate class="needs-validation">
+                <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="title" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+                <div class="mb-3">
+                <label class="form-label" for="location">location</label>
+                <input class="form-control" type="text" id="location" name="location" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="price">price</label>
+                    <div class="input-group">
+                    <span class="input-group-text" id="price">$</span>
+                    <input class="form-control" type="text" id="price" name="price" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                       </div>
+                       <div class="invalid-feedback">
+                      Please choose a username.
+                     </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                        <label class="form-label" for="description">description</label>
+                        <div class="input-group">
+                            <span class="input-group-text">With textarea </span>
+                            <textarea class="form-control" id="description" name="description" aria-label="With textarea" required></textarea>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                              Please choose a username.
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="price">Photo</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="photo">URL</span>
+                    <input class="form-control" type="text" id="photo" name="photo" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                </div>
+                </div>
+                
+                <div class="mb-3">
+                    <input class="btn btn-success" type="submit" value="Add Campground">
+                </div>
+            </form>
+            <a href="/main">All Campground</a>
+        </div>
+    </div>
+    <div class="row mb-5">
+    </div>
+    </div>
